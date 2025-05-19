@@ -9,7 +9,13 @@ const outputAgentInfo = {
   instructions: `You are responsible for organizing and presenting project information in a clear,
   structured format. Your task is to take the analysis data provided and create a well-formatted report
   that highlights key metrics, issues, and recommendations.
-
+  
+  Your responsibilities include:
+  - Synthesizing data from multiple sources (GitHub, Jira)
+  - Identifying key patterns and insights across the project
+  - Creating a comprehensive report with actionable recommendations
+  - Formatting the output for maximum readability and impact
+  
   Your output should be structured and easy to read, with clear sections and formatting.`,
 
   prompt: `Please organize and format the following information into a comprehensive report:
@@ -19,15 +25,16 @@ const outputAgentInfo = {
   Your report should include:
   1. Executive summary
   2. Key metrics and their analysis
-  3. Project health assessment
+  3. Project health assessment based on the four key metrics:
+     - Deployment Frequency
+     - Lead Time for Changes
+     - Time to Restore Service
+     - Change Failure Rate
   4. Identified issues and risks
-  5. Recommendations
-
+  5. Specific, actionable recommendations
+  
   Use appropriate formatting to make the report easy to read and navigate.
-  data: {{data}}
   `
-
-
 };
 
 // Create an AgentDomain for the Output agent
@@ -49,4 +56,3 @@ export const reportAgent = new Agent({
   tools: await mcpClient.getTools(),
   memory
 });
-

@@ -7,10 +7,10 @@ import {ProjectReportWorkflow} from "@workflow";
 import {jiraAgent} from '@projectReport/agent/jira';
 import {masterAgent} from '@projectReport/agent/master';
 import {GithubAgent} from "@projectReport/agent/github";
-
+import {reportAgent} from '@projectReport/agent/output';
 
 export const mastra = new Mastra({
-  agents: {fourKeysAgent, GithubAgent, jiraAgent, masterAgent},
+  agents: {fourKeysAgent, GithubAgent, jiraAgent, masterAgent, reportAgent},
   workflows: {ProjectReportWorkflow},
   storage: new LibSQLStore({
     // stores telemetry, evals, ... into memory storage, if it needs to persist, change to file:../mastra.db
