@@ -1,0 +1,86 @@
+Your goal is to generate code by following rule and check your code will run correctly or not.
+
+## Technology Stack and Constraints
+### Core Technologies
+{
+  "name": "4keys-mastra",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "mastra dev",
+    "build": "mastra build",
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "type": "module",
+  "dependencies": {
+    "@ai-sdk/anthropic": "^1.2.10",
+    "@mastra/core": "^0.9.1",
+    "@mastra/fastembed": "^0.0.2",
+    "@mastra/libsql": "^0.0.1",
+    "@mastra/mcp": "^0.4.3",
+    "@mastra/memory": "^0.3.1",
+    "@octokit/rest": "^19.0.13",
+    "dotenv": "^16.5.0",
+    "jira-client": "^8.2.2",
+    "langfuse": "^3.37.2",
+    "langfuse-vercel": "^3.37.2",
+    "zod": "^3.24.4"
+  },
+  "devDependencies": {
+    "@types/jira-client": "^7.1.6",
+    "@types/node": "^22.15.12",
+    "mastra": "^0.6.2",
+    "typescript": "^5.8.3"
+  }
+}
+
+### code structure
+./src
+├── const
+     └── const.ts
+├── domain
+     ├── agent
+         └── agentDomain.ts
+     └── prompt
+         ├── promptDomain.ts
+         └── types.ts
+├── env.ts
+├── index.ts
+├── mastra
+     ├── agents
+         └── fourKeysAgent.ts
+     ├── index.ts
+     └── prompts
+         ├── fourKeysPrompt.ts
+         └── projectReportPrompt.ts
+├── mcp
+     └── index.ts
+├── projectReport
+     ├── agent
+         ├── github.ts
+         ├── jira.ts
+         ├── master.ts
+         └── output.ts
+     ├── models
+         └── index.ts
+     ├── step
+         ├── github.ts
+         ├── index.ts
+         ├── jira.ts
+         └── report.ts
+     └── workflow
+         └── index.ts
+└── wrapper
+    ├── index.ts
+    ├── langfuse.ts
+    └── types.ts
+
+## import rules
+* Please use alias path at tsconfig.json
+* if alias is not exist. Please add path alise at tsconfig.json
+* when you add alias. Please add dir level. ex) "@projectReport/*": ["src/projectReport/*"]
+

@@ -1,0 +1,37 @@
+{
+  "name": "4keys-mastra",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "mastra dev",
+    "build": "mastra build",
+    "search": "node dist/bin/search.js",
+    "project-report": "node dist/bin/project-report.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "type": "module",
+  "dependencies": {
+    "@ai-sdk/anthropic": "^1.2.10",
+    "@mastra/core": "^0.9.1",
+    "@mastra/fastembed": "^0.0.2",
+    "@mastra/libsql": "^0.0.1",
+    "@mastra/mcp": "^0.4.3",
+    "@mastra/memory": "^0.3.1",
+    "@octokit/rest": "^19.0.13",
+    "dotenv": "^16.5.0",
+    "jira-client": "^8.2.2",
+    "langfuse": "^3.37.2",
+    "langfuse-vercel": "^3.37.2",
+    "zod": "^3.24.4"
+  },
+  "devDependencies": {
+    "@types/jira-client": "^7.1.6",
+    "@types/node": "^22.15.12",
+    "mastra": "^0.6.2",
+    "typescript": "^5.8.3"
+  }
+}
