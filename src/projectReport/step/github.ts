@@ -32,7 +32,13 @@ export const fetchGitHubDataStep = new Step({
     console.log(prompt, 'PROMPT')
 
     const result = await GithubAgent.generate(prompt, {
-          output: githubStepOutputSchema
+          output: githubStepOutputSchema,
+          context: [{
+            role: 'user',
+            content: []
+          }]
+
+
         }
     )
     console.log(result)
